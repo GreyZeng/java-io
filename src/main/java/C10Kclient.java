@@ -20,7 +20,6 @@ public class C10Kclient {
                 clients.add(client1);
 
                 client2.bind(new InetSocketAddress("192.168.205.1", j));
-                //  192.168.110.100：10000  192.168.150.11：9090
                 client2.connect(serverAddr);
                 clients.add(client2);
 
