@@ -1,3 +1,5 @@
+package git.snippets.io;
+
 import java.io.*;
 import java.net.Socket;
 

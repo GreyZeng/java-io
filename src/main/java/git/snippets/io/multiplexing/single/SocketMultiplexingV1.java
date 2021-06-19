@@ -1,3 +1,5 @@
+package git.snippets.io.multiplexing.single;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -27,8 +29,6 @@ public class SocketMultiplexingV1 {
         System.out.println("服务器启动了。。。。。");
         try {
             while (true) {
-                Set<SelectionKey> keys = selector.keys();
-                System.out.println(keys.size() + "   size");
                 while (selector.select() > 0) {
                     //返回的有状态的fd集合
                     Set<SelectionKey> selectionKeys = selector.selectedKeys();
@@ -87,7 +87,6 @@ public class SocketMultiplexingV1 {
             }
         } catch (IOException e) {
             e.printStackTrace();
-
         }
     }
 
