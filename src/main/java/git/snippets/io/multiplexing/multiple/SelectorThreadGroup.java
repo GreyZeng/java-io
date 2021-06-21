@@ -46,11 +46,10 @@ public class SelectorThreadGroup {
             SelectorThread st;
             if (c instanceof ServerSocketChannel) {
                 st = nextBoss();
-                st.lbq.put(c);
             } else {
                 st = nextWork();
-                st.lbq.put(c);
             }
+            st.lbq.put(c);
             st.selector.wakeup();
         } catch (InterruptedException e) {
             e.printStackTrace();
