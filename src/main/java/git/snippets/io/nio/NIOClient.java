@@ -36,7 +36,7 @@ public class NIOClient {
                         selectionKey.interestOps(selectionKey.interestOps() & ~SelectionKey.OP_CONNECT | SelectionKey.OP_WRITE);
                     }
                 } else if (selectionKey.isReadable()) {
-                    ByteBuffer buffer = ByteBuffer.allocate(32);
+                    ByteBuffer buffer = ByteBuffer.allocateDirect(32);
                     int len = socketChannel.read(buffer);
                     if (len == -1) {
                         throw new RuntimeException("连接已断开");

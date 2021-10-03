@@ -42,7 +42,7 @@ public class NIOServer {
                 } else if (selectionKey.isReadable()) {
                     SocketChannel socketChannel = (SocketChannel)selectionKey.channel();
                     //NIO规定，必须要用Buffer进行读写
-                    ByteBuffer buffer = ByteBuffer.allocate(32);
+                    ByteBuffer buffer = ByteBuffer.allocateDirect(32);
                     int len = socketChannel.read(buffer);
                     if(len == -1){
                         throw  new RuntimeException("连接已断开");
