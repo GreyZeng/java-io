@@ -30,8 +30,11 @@ public class Server {
             @Override
             protected void initChannel(SocketChannel ch) {
                 ch.pipeline().addLast(new FixedLengthFrameDecoder(Long.BYTES));
-                ch.pipeline().addLast(businessGroup, ServerBusinessHandler.INSTANCE);
-//                ch.pipeline().addLast(ServerBusinessThreadPoolHandler.INSTANCE);
+                // ch.pipeline().addLast(ServerBusinessHandler.INSTANCE);
+                // 使用业务线程池方式
+                // ch.pipeline().addLast(ServerBusinessThreadPoolHandler.INSTANCE);
+                // 使用Netty自带线程池方式
+                ch.pipeline().addLast(businessGroup,ServerBusinessHandler.INSTANCE);
             }
         });
 
