@@ -52,7 +52,8 @@
                             <appendAssemblyId>false</appendAssemblyId>
                             <archive>
                                 <manifest>
-                                    <mainClass>git.snippets.io.opt.connection.Server</mainClass>
+<!--                                    <mainClass>git.snippets.io.opt.connection.Server</mainClass>-->
+                                    <mainClass>git.snippets.io.opt.thread.Server</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
@@ -73,7 +74,8 @@
                             <appendAssemblyId>false</appendAssemblyId>
                             <archive>
                                 <manifest>
-                                    <mainClass>git.snippets.io.opt.connection.Client</mainClass>
+<!--                                    <mainClass>git.snippets.io.opt.connection.Client</mainClass>-->
+                                    <mainClass>git.snippets.io.opt.thread.Client</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
