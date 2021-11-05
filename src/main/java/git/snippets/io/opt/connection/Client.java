@@ -12,7 +12,7 @@ import static git.snippets.io.opt.connection.Constant.N_PORT;
 
 public class Client {
 
-    private static final String SERVER_HOST = "192.168.118.138";
+    private static final String SERVER_HOST = "192.168.241.144";
 
     public static void main(String[] args) {
         new Client().start(BEGIN_PORT, N_PORT);
@@ -47,7 +47,7 @@ public class Client {
                 channelFuture.get();
             } catch (Exception e) {
             }
-
+            //
             if (++index == nPort) {
                 index = 0;
             }

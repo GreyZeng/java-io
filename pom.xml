@@ -26,7 +26,7 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.1.68.Final</version>
+            <version>4.1.42.Final</version>
         </dependency>
     </dependencies>
     <build>
@@ -52,7 +52,8 @@
                             <appendAssemblyId>false</appendAssemblyId>
                             <archive>
                                 <manifest>
-                                    <mainClass>git.snippets.io.opt.connection.Server</mainClass>
+<!--                                    <mainClass>git.snippets.io.opt.connection.Server</mainClass>-->
+                                    <mainClass>git.snippets.io.opt.thread.Server</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
@@ -73,7 +74,8 @@
                             <appendAssemblyId>false</appendAssemblyId>
                             <archive>
                                 <manifest>
-                                    <mainClass>git.snippets.io.opt.connection.Client</mainClass>
+<!--                                    <mainClass>git.snippets.io.opt.connection.Client</mainClass>-->
+                                    <mainClass>git.snippets.io.opt.thread.Client</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>

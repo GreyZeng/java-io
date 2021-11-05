@@ -36,6 +36,8 @@ public final class Server {
 
         for (int i = 0; i < nPort; i++) {
             int port = beginPort + i;
+            // 启动100个服务端
+            // 每个服务端可以连大约6w个客户端
             bootstrap.bind(port).addListener((ChannelFutureListener) future -> {
                 System.out.println("bind success in port: " + port);
             });
