@@ -3,7 +3,6 @@ package git.snippets.io.searial;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.nio.ByteBuffer;
 
 /**
  * 序列化示例
