@@ -1,4 +1,4 @@
-package git.snippets.file;
+package git.snippets.io;
 
 import java.io.File;
 import java.io.FileInputStream;
