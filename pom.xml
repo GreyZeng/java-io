@@ -21,12 +21,12 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.1</version>
+            <version>4.13.2</version>
         </dependency>
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
-            <version>4.1.69.Final</version>
+            <version>4.1.72.Final</version>
         </dependency>
     </dependencies>
     <build>
