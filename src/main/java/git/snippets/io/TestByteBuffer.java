@@ -1,9 +1,48 @@
 package git.snippets.io;
 
+import io.netty.buffer.ByteBuf;
+import io.netty.buffer.ByteBufAllocator;
+
 import java.nio.ByteBuffer;
 
 public class TestByteBuffer {
     public static void main(String[] args) {
+        jdkByteBuffer();
+        nettyByteBuf();
+    }
+
+    private static void nettyByteBuf() {
+        ByteBuf buf = ByteBufAllocator.DEFAULT.buffer(8, 20);
+        print(buf);
+        buf.writeBytes(new byte[]{1, 2, 3, 4});
+        print(buf);
+        buf.writeBytes(new byte[]{1, 2, 3, 4});
+        print(buf);
+        buf.writeBytes(new byte[]{1, 2, 3, 4});
+        print(buf);
+        buf.writeBytes(new byte[]{1, 2, 3, 4});
+        print(buf);
+        buf.writeBytes(new byte[]{1, 2, 3, 4});
+        print(buf);
+        // 以下会报错，超过最大容量
+        buf.writeBytes(new byte[]{1, 2, 3, 4});
+    }
+
+    private static void print(ByteBuf buf) {
+        System.out.println(buf);
+        System.out.println(buf.isReadable());
+        System.out.println(buf.readerIndex());
+        System.out.println(buf.readableBytes());
+        System.out.println(buf.isWritable());
+        System.out.println(buf.writableBytes());
+        System.out.println(buf.capacity());
+        System.out.println(buf.maxCapacity());
+        System.out.println(buf.isDirect());
+        System.out.println("---end---");
+    }
+
+
+    private static void jdkByteBuffer() {
         ByteBuffer buffer = ByteBuffer.allocateDirect(1024);
         //  ByteBuffer buffer = ByteBuffer.allocate(1024);
         System.out.println("mark: " + buffer);
