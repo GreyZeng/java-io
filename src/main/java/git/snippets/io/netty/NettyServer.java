@@ -27,7 +27,7 @@ public class NettyServer {
                         ChannelPipeline pipeline = nioServerSocketChannel.pipeline();
                         pipeline.addLast(new NettyClientSync.MyInHandler());
                     }
-                }).bind(new InetSocketAddress("192.168.205.1", 9090));
+                }).bind(new InetSocketAddress("localhost", 9090));
         bind.sync().channel().closeFuture().sync();
     }
 }

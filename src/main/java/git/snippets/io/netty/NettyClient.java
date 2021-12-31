@@ -28,7 +28,7 @@ public class NettyClient {
                         ChannelPipeline pipeline = nioSocketChannel.pipeline();
                         pipeline.addLast(new NettyClientSync.MyInHandler());
                     }
-                }).connect(new InetSocketAddress("192.168.205.138", 9090));
+                }).connect(new InetSocketAddress("localhost", 9090));
         Channel client = fu.channel();
         ByteBuf buf = Unpooled.copiedBuffer("Hello Server".getBytes());
         ChannelFuture future = client.writeAndFlush(buf);
