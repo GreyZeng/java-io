@@ -52,7 +52,7 @@
                             <appendAssemblyId>false</appendAssemblyId>
                             <archive>
                                 <manifest>
-<!--                                    <mainClass>git.snippets.io.opt.connection.Server</mainClass>-->
+                                    <!--                                    <mainClass>git.snippets.io.opt.connection.Server</mainClass>-->
                                     <mainClass>git.snippets.io.opt.thread.Server</mainClass>
                                 </manifest>
                             </archive>
@@ -60,7 +60,7 @@
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
                             <finalName>server</finalName>
-<!--                            <outputDirectory>/data/vagrant/centos6.5/server</outputDirectory>-->
+                            <!--                            <outputDirectory>/data/vagrant/centos6.5/server</outputDirectory>-->
                         </configuration>
                         <phase>package</phase>
                         <goals>
@@ -74,7 +74,7 @@
                             <appendAssemblyId>false</appendAssemblyId>
                             <archive>
                                 <manifest>
-<!--                                    <mainClass>git.snippets.io.opt.connection.Client</mainClass>-->
+                                    <!--                                    <mainClass>git.snippets.io.opt.connection.Client</mainClass>-->
                                     <mainClass>git.snippets.io.opt.thread.Client</mainClass>
                                 </manifest>
                             </archive>
@@ -82,14 +82,13 @@
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
                             <finalName>client</finalName>
-<!--                            <outputDirectory>/data/vagrant/centos6.5/client</outputDirectory>-->
+                            <!--                            <outputDirectory>/data/vagrant/centos6.5/client</outputDirectory>-->
                         </configuration>
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
                         </goals>
                     </execution>
-
 
 
                 </executions>

@@ -2,6 +2,9 @@ package git.snippets.io;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
+import io.netty.buffer.PooledByteBufAllocator;
+import io.netty.buffer.UnpooledByteBufAllocator;
+import io.netty.buffer.UnpooledDirectByteBuf;
 
 import java.nio.ByteBuffer;
 
@@ -12,7 +15,11 @@ public class TestByteBuffer {
     }
 
     private static void nettyByteBuf() {
+
         ByteBuf buf = ByteBufAllocator.DEFAULT.buffer(8, 20);
+        // 其他分配方式，池化，非池化，堆内，堆外
+        // buf = UnpooledByteBufAllocator.DEFAULT.heapBuffer(8, 20);
+        // buf = PooledByteBufAllocator.DEFAULT.heapBuffer(8, 20);
         print(buf);
         buf.writeBytes(new byte[]{1, 2, 3, 4});
         print(buf);
