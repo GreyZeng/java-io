@@ -1,6 +1,7 @@
-package git.snippets.io.rpc;
+package git.snippets.io.myrpc.rpc.protocol;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  * @author <a href="mailto:410486047@qq.com">Grey</a>
@@ -14,7 +15,7 @@ public class MyHeader implements Serializable {
     // 3. DATA_LEN
     int flag;
     long requestID;
-    long dataLen;
+    int dataLen;
 
     public int getFlag() {
         return flag;
@@ -32,11 +33,24 @@ public class MyHeader implements Serializable {
         this.requestID = requestID;
     }
 
-    public long getDataLen() {
+    public int getDataLen() {
         return dataLen;
     }
 
-    public void setDataLen(long dataLen) {
+    public void setDataLen(int dataLen) {
         this.dataLen = dataLen;
+    }
+
+    public static MyHeader createHeader(byte[] msg) {
+        MyHeader header = new MyHeader();
+        int size = msg.length;
+        int f = 0x14141414;
+        long requestID = Math.abs(UUID.randomUUID().getLeastSignificantBits());
+        //0x14  0001 0100
+        header.setFlag(f);
+        header.setDataLen(size);
+        header.setRequestID(requestID);
+        return header;
+
     }
 }
