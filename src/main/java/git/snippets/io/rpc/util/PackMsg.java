@@ -1,7 +1,7 @@
-package git.snippets.io.myrpc.util;
+package git.snippets.io.rpc.util;
 
-import git.snippets.io.myrpc.rpc.protocol.MyContent;
-import git.snippets.io.myrpc.rpc.protocol.MyHeader;
+import git.snippets.io.rpc.protocol.MyContent;
+import git.snippets.io.rpc.protocol.MyHeader;
 
 /**
  * @author <a href="mailto:410486047@qq.com">Grey</a>

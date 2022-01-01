@@ -1,4 +1,4 @@
-package git.snippets.io.myrpc.util;
+package git.snippets.io.rpc.util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

@@ -1,9 +1,9 @@
-package git.snippets.io.myrpc.rpc;
+package git.snippets.io.rpc;
 
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Dispacher {
-    private static Dispacher dis = null;
+    private static Dispacher dis;
 
     static {
         dis = new Dispacher();

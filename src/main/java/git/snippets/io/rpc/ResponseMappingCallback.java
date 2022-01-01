@@ -1,6 +1,6 @@
-package git.snippets.io.myrpc.rpc;
+package git.snippets.io.rpc;
 
-import git.snippets.io.myrpc.util.PackMsg;
+import git.snippets.io.rpc.util.PackMsg;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;

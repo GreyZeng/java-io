@@ -1,4 +1,4 @@
-package git.snippets.io.myrpc.rpc.service;
+package git.snippets.io.rpc.service;
 
 public class MyFly implements Fly {
 

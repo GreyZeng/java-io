@@ -1,4 +1,4 @@
-package git.snippets.io.myrpc.rpc.protocol;
+package git.snippets.io.rpc.protocol;
 
 import java.io.Serializable;
 import java.util.UUID;

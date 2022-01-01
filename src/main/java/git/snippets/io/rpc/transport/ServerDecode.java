@@ -1,8 +1,8 @@
-package git.snippets.io.myrpc.rpc.transport;
+package git.snippets.io.rpc.transport;
 
-import git.snippets.io.myrpc.util.PackMsg;
-import git.snippets.io.myrpc.rpc.protocol.MyContent;
-import git.snippets.io.myrpc.rpc.protocol.MyHeader;
+import git.snippets.io.rpc.util.PackMsg;
+import git.snippets.io.rpc.protocol.MyContent;
+import git.snippets.io.rpc.protocol.MyHeader;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.ByteToMessageDecoder;
@@ -15,8 +15,8 @@ public class ServerDecode extends ByteToMessageDecoder {
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf buf, List<Object> out) throws Exception {
-        while (buf.readableBytes() >= 109) {
-            byte[] bytes = new byte[109];
+        while (buf.readableBytes() >= 103) {
+            byte[] bytes = new byte[103];
             buf.getBytes(buf.readerIndex(), bytes);  //从哪里读取，读多少，但是readindex不变
             ByteArrayInputStream in = new ByteArrayInputStream(bytes);
             ObjectInputStream oin = new ObjectInputStream(in);
@@ -25,9 +25,9 @@ public class ServerDecode extends ByteToMessageDecoder {
 
             //DECODE在2个方向都使用
             //通信的协议
-            if (buf.readableBytes() - 109 >= header.getDataLen()) {
+            if (buf.readableBytes() - 103 >= header.getDataLen()) {
                 //处理指针
-                buf.readBytes(109);  //移动指针到body开始的位置
+                buf.readBytes(103);  //移动指针到body开始的位置
                 byte[] data = new byte[(int) header.getDataLen()];
                 buf.readBytes(data);
                 ByteArrayInputStream din = new ByteArrayInputStream(data);

@@ -1,4 +1,4 @@
-package git.snippets.io.myrpc.rpc.transport;
+package git.snippets.io.rpc.transport;
 
 import io.netty.channel.socket.nio.NioSocketChannel;
 
